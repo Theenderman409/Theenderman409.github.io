@@ -1,0 +1,54 @@
+<!Doctype Html>
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{
+color: white;
+background: black;
+}
+h1{
+text-align: center;
+font-size: 40px;
+}
+button{
+border: 1px solid black;
+background: skyblue;
+color: white;
+width: 100%;
+height: 100%;
+font-size: 30px;
+}
+p{
+font-size: 25px;
+}
+</style>
+</head>
+<body>
+<h1>The Dice Of Fortune</h1>
+<button onclick="start()">Roll</button>
+<p id="NumS"></p>
+<br><br><br>
+<h4>Max Number: 70<br>Min Number: 5</h4>
+<script>
+var target = document.getElementById("NumS");
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function start(){
+var num1 = getRandomInt(1, 20);
+var num2 = getRandomInt(1, 20);
+var num3 = getRandomInt(1, 15);
+var num4 = getRandomInt(1, 10);
+var num5 = getRandomInt(1, 5);
+var total = num1 + num2 + num3 + num4 + num5;
+
+target.innerHTML = "Numbers: <br> " + "#1, " + num1 + "<br> #2, " + num2 + "<br> #3, " + num3 + "<br> #4, " + num4 + "<br> #5, " + num5 + "<br><br>Total:<br>" + total;
+}
+</script>
+</body>
+</html>
